@@ -96,6 +96,8 @@ public class SerialPortSelector extends JPanel
 					// if we made it here, we have a good identifier...now try to open it
 					if( SerialPortSelector.this.serialPort.openPort() )
 					{
+						SerialPortSelector.this.serialPort.clearDTR();
+						SerialPortSelector.this.serialPort.clearRTS();
 						SerialPortSelector.this.serialPort.setComPortParameters((Integer)cmbBaudRate.getSelectedItem(), 8, 1, 0);
 					}
 					else

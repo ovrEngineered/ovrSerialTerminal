@@ -95,4 +95,11 @@ public class SerialTtyConnector implements TtyConnector
 	{
 		write(string.getBytes(StandardCharsets.UTF_8));
 	}
+
+
+	@Override
+	public boolean ready() throws IOException
+	{
+		return (this.serialPort != null);
+	}
 }
